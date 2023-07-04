@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/stylesheet2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="images/logo.png.png" alt="Company Logo">
+        </div>
+        <div class="company-name">
+          <h1>HENRICH VENTURES</h1>
+        </div>
+        <nav>
+            <ul>
+              <div class="tabs">
+              <li class="tab"><a href="index.html">Home</a></li>
+            </div>
+            </ul>
+          </nav>
+      </header>
+  <div class="container">
+    <h2 id="swap">Login</h2>
+    <form>
+      <label id="Name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <input type="submit" id="submit" value="Signin" onclick="validateForm()">
+    </form>
+    <div class="Here" onclick="Here()">Don't have an account? Click <a href="#" > Here </a> to sign up </div>
+  </div>
+  <script>
+    
+    let userData = JSON.parse(localStorage.getItem('userData')) || [];
+
+    function Here(){
+      const Name = document.getElementById('Name').style.display = "block";
+      const name = document.getElementById('name');
+      name.style.display = "block";
+      const submit = document.getElementById('submit').value = "Signup";
+      const swap = document.getElementById('swap').innerHTML = "SignUp";
+
+     
+
+    }
+
+    function validateForm() {
+    // const element = document.getElementsByClassName('name');
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email =  document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const computedStyle = window.getComputedStyle(Name);
+    const displayPropertyValue = computedStyle.getPropertyValue('display')
+    
+    const emailValidator = new RegExp("^.+@.+\..+$");
+    const validEmail = emailValidator.test(email);
+    
+    //VALIDATE EMAIL
+    if (!validEmail){
+      alert('enter a valid email');
+      return;
+    }
+    // VALIDATE PASSWORD
+    const pswdValidator = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+    const checkPswd = pswdValidator.test(password);
+    if(!checkPswd){
+    alert('Password must not be less than 6 digits, must contain an Uppercase, Lowercase and a Number');
+    return;
+    }
+
+    existingUser = userData.find(user => user.email === email && user.password === password);
+
+    if( displayPropertyValue !== 'none'){
+
+      existingUser = userData.find(user => user.email === email);
+      // alert(existingUser.email);
+
+      //VALIDATE NAME
+    if(name == ''){
+    alert('name cannot be empty');
+    return;
+  }
+      
+      if(existingUser){
+      alert('User Already Exists, Please Login');
+      return;
+    }
+
+    // alert('New user added to localStorage')
+      const newUser = {
+      name: name,
+      email: email,
+      password: password
+
+    }
+
+    userData.push(newUser);
+
+    localStorage.setItem('userData', JSON.stringify(userData))
+    alert("signup Successful");
+    window.location.href = "dashboard.html";
+    return;
+    }
+
+    // const user = userData.find((user) => (user.email === email) && user.password === hashedPassword);
+    //  alert(user.password);
+    if (existingUser) {
+      alert("Login successful!");
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+       
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 50px;
+    background-color: black;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    width: 80px; 
+    height: auto;
+    margin-right: none; 
+  }
+  
+
+  .company-name h1 {
+    text-align: left;
+    margin: 0;
+    color:whitesmoke;
+  }
+  .Here{
+    padding-top: 10px;
+    
+  }
+  a{
+    text-decoration: none;
+    color:#45a049
+  }
+
+  #name, #Name{
+    display: none;
+    visibility: none; 
+
+  }
+    nav ul li a {
+        color: #000000;
+        text-decoration: none;
+        padding: 5px 5px;
+        border-radius: 5px;
+      }
+  .tab {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fffafa;
+    text-align: right;
+  }
+  
+  .tab:hover {
+    background-color: #aaa;
+  } 
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  

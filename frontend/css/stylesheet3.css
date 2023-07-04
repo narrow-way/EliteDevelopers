@@ -1,0 +1,47 @@
+header {
+    background-color: blue;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1{
+    color: white;
+    font-size: large;
+  }
+  
+  .logout {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border: 2px solid white;
+    border-radius: 3px;
+  }
+  
+  .logout:hover {
+    background-color: #ccc;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  h2{
+    text-align: center;
+    color: red;
+
+  }
+  .slideshow-container {
+    max-width: 30%;
+    position: relative;
+    margin: auto;
+  }
+
+  .slideshow-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Hide all slides except the first one */
+  .mySlides {
+    display: none;
+  }
